@@ -32,18 +32,36 @@ const resolvers = {
             // asign token
             const token = signToken(user);
             return {token, user}
-        },
+        }
         // create user
         addUser: async (parents, args) => {
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user};
-        }
+        },
     }
     saveBook: async (parent, {input}, context) => {
         // require login
-        if (context.user)
+        if (context.user){
+            const updatedUser = await User.findByIdAndUpdate(
+                {_id : context.user._id},
+                { $addToSet: {savedBooks: input}},
+                // set new true
+                {new: true}
+            );
+            return updatedUser;
+        }
+        throw new AuthenticationError('Please login.')
+    },
+    removeBook: async (parent, args, context) => {
+        if (context.user){
+            const updatedUser = await User.findByIdAndUpdate(
+                {_id : context.user._id},
+                { $apull: {savedBooks: { bookId: args.bookId}}},
+                // set new true
+                {new: true}
+            )
+        }
     }
-
 
 }
