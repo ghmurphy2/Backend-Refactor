@@ -32,14 +32,14 @@ const resolvers = {
             // asign token
             const token = signToken(user);
             return {token, user}
-        }
+        },
         // create user
         addUser: async (parents, args) => {
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user};
         },
-    }
+    },
     saveBook: async (parent, {input}, context) => {
         // require login
         if (context.user){
