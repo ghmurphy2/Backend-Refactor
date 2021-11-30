@@ -24,6 +24,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    // added apollo provider wrapper
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
@@ -34,6 +36,7 @@ function App() {
         </Switch>
       </>
     </Router>
+    </ApolloProvider>
   );
 }
 
