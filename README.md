@@ -48,30 +48,13 @@ Download the repository
 - To run on browser: `npm start`
 - You can also use the heroku-link for a demo:
 - Deployed link: 
+
+- https://murmuring-scrubland-41519.herokuapp.com/
 ​
-## Code Overview
-​
-- Basic overview
-​
-## Summary
-​
-- This project is a mock-CRM for a start-up/small brewery company. 
-​
-## CSS style
-​
-- This part we explain the CSS style 
-​
-​
-## Routing-Explained
-​
-- Routing 
-​
-![Image](assets/routing.png)
 ​
 ## Authors
 ​
-- John Doe
-- Jane Doe
+- Gavin Murphy
 ​
 ## License
 ​

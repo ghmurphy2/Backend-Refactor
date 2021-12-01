@@ -62,7 +62,9 @@ const resolvers = {
           // set new true
           { new: true }
         );
+        return updatedUser;
       }
+      throw new AuthenticationError("Please login.");
     },
   },
 };
